@@ -1,0 +1,13 @@
+.schedule {
+  width: 100%;
+}
+.schedule_column {
+  width: 14%;
+  float: left;
+}
+.schedule_column_date {
+  font-weight: bold;
+}
+.schedule_column_item {
+  border: 1px solid #00f;
+}

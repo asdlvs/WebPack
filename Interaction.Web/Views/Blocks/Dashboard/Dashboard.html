@@ -1,0 +1,1 @@
+<h2>Рабочий стол пользователя</h2><div ng-controller="ScheduleController" class="schedule">{{ schedule.Items.Count() }}<div ng-repeat="(key, value) in schedule.Items" class="schedule_column"><div class="schedule_column_date">{{ key }}</div><div ng-repeat="item in value" class="schedule_column_item">{{ item.Title }}</div></div></div><div class="footer">Copyright(c)</div>

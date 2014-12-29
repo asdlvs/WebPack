@@ -1,0 +1,7 @@
+div.schedule(ng-controller="ScheduleController")
+   | {{ schedule.Items.Count() }}
+   div.schedule_column(ng-repeat="(key, value) in schedule.Items")
+      div.schedule_column_date
+         | {{ key }}
+      div.schedule_column_item(ng-repeat="item in value")
+         | {{ item.Title }}

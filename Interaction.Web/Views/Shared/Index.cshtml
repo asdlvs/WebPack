@@ -1,0 +1,11 @@
+﻿@using Interaction.Web.Models
+@model AggregateModel
+
+@Html.Raw(Model.GetModel())
+
+<script src="~/Scripts/app.js"></script>
+
+<div ng-app="@Model.Name">
+    <base href="/" />
+    <div ng-view></div>
+</div>
