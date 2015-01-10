@@ -13,16 +13,7 @@ namespace Interaction.Web.Controllers
         {
             var schedule = new ScheduleModel
             {
-                Items = new Dictionary<string, List<ScheduleModel.ScheduleItem>>
-                {
-                    { DateTime.Now.AddDays(1).ToShortDateString(), GenerateRandomItems() },
-                    { DateTime.Now.AddDays(2).ToShortDateString(), GenerateRandomItems() },
-                    { DateTime.Now.AddDays(3).ToShortDateString(), GenerateRandomItems() },
-                    { DateTime.Now.AddDays(4).ToShortDateString(), GenerateRandomItems() },
-                    { DateTime.Now.AddDays(5).ToShortDateString(), GenerateRandomItems() },
-                    { DateTime.Now.AddDays(6).ToShortDateString(), GenerateRandomItems() },
-                    { DateTime.Now.AddDays(7).ToShortDateString(), GenerateRandomItems() }
-                }
+                Items = GenerateDaySchedule()
             };
 
             var aggregate = new AggregateModel();
@@ -31,16 +22,9 @@ namespace Interaction.Web.Controllers
             return View("Index", aggregate);
         }
 
-        public ActionResult AnotherPage()
-        {
-            var aggregate = new AggregateModel();
-
-            return View(aggregate);
-        }
-
         private List<ScheduleModel.ScheduleItem> GenerateRandomItems()
         {
-            var linkedList = new List<ScheduleModel.ScheduleItem>();
+            var list = new List<ScheduleModel.ScheduleItem>();
             
             for (int i = 1; i <= 5; i++)
             {
@@ -51,10 +35,22 @@ namespace Interaction.Web.Controllers
                     Description = string.Format("Some description: {0}", Guid.NewGuid())
                 };
 
-                linkedList.Add(item);
+                list.Add(item);
             }
 
-            return linkedList;
+            return list;
+        }
+
+        private Dictionary<string, List<ScheduleModel.ScheduleItem>> GenerateDaySchedule()
+        {
+            var schedule = new Dictionary<string, List<ScheduleModel.ScheduleItem>>();
+
+            for(var i = 0; i < 5; i++)
+            {
+                schedule.Add(DateTime.Now.AddDays(4).ToShortDateString(), GenerateRandomItems());
+            }
+
+            return schedule;
         }
     }
 }

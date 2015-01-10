@@ -16,3 +16,22 @@ c:\users\vlebedev\documents\visual studio 2013\Projects\Interaction\Interaction.
 c:\users\vlebedev\documents\visual studio 2013\Projects\Interaction\Interaction.Web\bin\System.Web.Mvc.xml
 c:\users\vlebedev\documents\visual studio 2013\Projects\Interaction\Interaction.Web\obj\Debug\Interaction.Web.dll
 c:\users\vlebedev\documents\visual studio 2013\Projects\Interaction\Interaction.Web\obj\Debug\Interaction.Web.pdb
+C:\D\Projs\I\WebPack\Interaction.Web\bin\Interaction.Web.dll.config
+C:\D\Projs\I\WebPack\Interaction.Web\bin\Interaction.Web.dll
+C:\D\Projs\I\WebPack\Interaction.Web\bin\Interaction.Web.pdb
+C:\D\Projs\I\WebPack\Interaction.Web\bin\Microsoft.Web.Infrastructure.dll
+C:\D\Projs\I\WebPack\Interaction.Web\bin\System.Web.Helpers.dll
+C:\D\Projs\I\WebPack\Interaction.Web\bin\System.Web.Mvc.dll
+C:\D\Projs\I\WebPack\Interaction.Web\bin\System.Web.Razor.dll
+C:\D\Projs\I\WebPack\Interaction.Web\bin\System.Web.Webpages.Deployment.dll
+C:\D\Projs\I\WebPack\Interaction.Web\bin\System.Web.Webpages.dll
+C:\D\Projs\I\WebPack\Interaction.Web\bin\System.Web.Webpages.Razor.dll
+C:\D\Projs\I\WebPack\Interaction.Web\bin\System.Web.Razor.xml
+C:\D\Projs\I\WebPack\Interaction.Web\bin\System.Web.Webpages.xml
+C:\D\Projs\I\WebPack\Interaction.Web\bin\System.Web.Webpages.Deployment.xml
+C:\D\Projs\I\WebPack\Interaction.Web\bin\System.Web.Webpages.Razor.xml
+C:\D\Projs\I\WebPack\Interaction.Web\bin\System.Web.Helpers.xml
+C:\D\Projs\I\WebPack\Interaction.Web\bin\System.Web.Mvc.xml
+C:\D\Projs\I\WebPack\Interaction.Web\obj\Debug\Interaction.Web.csprojResolveAssemblyReference.cache
+C:\D\Projs\I\WebPack\Interaction.Web\obj\Debug\Interaction.Web.dll
+C:\D\Projs\I\WebPack\Interaction.Web\obj\Debug\Interaction.Web.pdb
