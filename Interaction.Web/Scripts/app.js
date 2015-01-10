@@ -44,26 +44,28 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(1);
+	__webpack_require__(1);
+	module.exports = __webpack_require__(2);
 
 
 /***/ },
 /* 1 */
 /***/ function(module, exports, __webpack_require__) {
 
-	//C:/Users/vlebedev/Documents/visual studio 2013/Projects/Interaction/Interaction.Web/Views/Blocks/Dashboard/Dashboard.jade
-	//C:/Users/vlebedev/Documents/visual studio 2013/Projects/Interaction/Interaction.Web/Views/Blocks/Dashboard/Dashboard.styl
-	__webpack_require__(3);
+	//C:/d/Projs/I/WebPack/Interaction.Web/views/Blocks/Dashboard/Dashboard.jade
+	//C:/d/Projs/I/WebPack/Interaction.Web/views/Blocks/Dashboard/Dashboard.styl
 	__webpack_require__(4);
+	__webpack_require__(6);
 
-	__webpack_require__(2);
+	__webpack_require__(3);
 
 	app.config(function ($routeProvider, $locationProvider) {
 	    $locationProvider.html5Mode(true);
 	    $routeProvider
-	        .when('/data/page', {
+	        .when('/index', {
 	            templateUrl: 'Dashboard.jade'
-	        });
+	        })
+	        .otherwise({ redirectTo: '/index' });
 	});
 
 
@@ -72,39 +74,67 @@
 /* 2 */
 /***/ function(module, exports, __webpack_require__) {
 
-	//C:/Users/vlebedev/Documents/visual studio 2013/Projects/Interaction/Interaction.Web/Views/Blocks/Schedule/Schedule.jade
-	//C:/Users/vlebedev/Documents/visual studio 2013/Projects/Interaction/Interaction.Web/Views/Blocks/Schedule/Schedule.styl
-	__webpack_require__(7);
+	//C:/d/Projs/I/WebPack/Interaction.Web/views/Blocks/Contacts/Contacts.jade
+	//C:/d/Projs/I/WebPack/Interaction.Web/views/Blocks/Contacts/Contacts.styl
+	__webpack_require__(5);
 	__webpack_require__(8);
-
-	app.controller('ScheduleController', ['$scope', 'serverData', function($scope, serverData) {
-	    $scope.schedule = serverData.get('schedule');
+	app.controller('ContactsController', ['$scope', 'serverData', function($scope, serverData) {
+	    $scope.contacts = serverData.get('contacts');
+	    debug.pop('contacts');
 	}]);
+
+	app.config(function($routeProvider, $locationProvider) {
+	    $locationProvider.html5Mode(true);
+	    $routeProvider
+	        .when('/contacts', { templateUrl: 'Contacts.jade' });
+	});
 
 /***/ },
 /* 3 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var v1="<h2>Рабочий стол пользователя</h2><div ng-controller=\"ScheduleController\" class=\"schedule\">{{ schedule.Items.Count() }}<div ng-repeat=\"(key, value) in schedule.Items\" class=\"schedule_column\"><div class=\"schedule_column_date\">{{ key }}</div><div ng-repeat=\"item in value\" class=\"schedule_column_item\">{{ item.Title }}</div></div></div><div class=\"footer\">Copyright(c)</div>";
-	angular.module(["ng"]).run(["$templateCache",function(c){c.put("Dashboard.jade", v1)}]);
-	module.exports=v1;
+	//C:/d/Projs/I/WebPack/Interaction.Web/views/Blocks/Schedule/Schedule.jade
+	//C:/d/Projs/I/WebPack/Interaction.Web/views/Blocks/Schedule/Schedule.styl
+	__webpack_require__(11);
+	__webpack_require__(12);
+
+	app.controller('ScheduleController', ['$scope', 'serverData', function($scope, serverData) {
+	    $scope.schedule = serverData.get('schedule');
+	    debug.pop('schedule');
+	}]);
 
 /***/ },
 /* 4 */
 /***/ function(module, exports, __webpack_require__) {
 
+	var v1="<h2>Рабочий стол пользователя</h2><a href=\"contacts\" target=\"_self\">Контакты</a><div ng-controller=\"ScheduleController\" class=\"schedule\">{{ schedule.Items.Count() }}<div ng-repeat=\"(key, value) in schedule.Items\" class=\"schedule__column\"><div class=\"schedule__column__date\">{{ key }}</div><div ng-repeat=\"item in value\" class=\"schedule__column__item\">{{ item.Title }}</div></div></div><div class=\"footer\">Copyright(c)</div>";
+	angular.module(["ng"]).run(["$templateCache",function(c){c.put("Dashboard.jade", v1)}]);
+	module.exports=v1;
+
+/***/ },
+/* 5 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var v1="<h2>Список контактов &nbsp &nbsp<a href=\"index\" target=\"_self\">(На главную)</a></h2><table ng-controller=\"ContactsController\" class=\"contacts\"><thead><tr><th>Id</th><th>Name</th><th>Phone</th><th>Email</th></tr></thead><tr ng-repeat=\"item in contacts.Items\" class=\"contacts__item\"><td class=\"contacts__item__property contacts__item__property_index\"> {{ item.Id }}</td><td class=\"contacts__item__property\"> {{ item.Name }}</td><td class=\"contacts__item__property\"> {{ item.Phone }}</td><td class=\"contacts__item__property\"> {{ item.Email }}</td></tr></table><div class=\"footer\">Copyright(c)</div>";
+	angular.module(["ng"]).run(["$templateCache",function(c){c.put("Contacts.jade", v1)}]);
+	module.exports=v1;
+
+/***/ },
+/* 6 */
+/***/ function(module, exports, __webpack_require__) {
+
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(5);
+	var content = __webpack_require__(7);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(6)(content, {});
+	var update = __webpack_require__(10)(content, {});
 	// Hot Module Replacement
 	if(false) {
 		// When the styles change, update the <style> tags
-		module.hot.accept("!!C:\\Users\\vlebedev\\Documents\\visual studio 2013\\Projects\\Interaction\\Interaction.Web\\Views\\node_modules\\css-loader\\index.js!C:\\Users\\vlebedev\\Documents\\visual studio 2013\\Projects\\Interaction\\Interaction.Web\\Views\\node_modules\\stylus-loader\\index.js!C:\\Users\\vlebedev\\Documents\\visual studio 2013\\Projects\\Interaction\\Interaction.Web\\Views\\Blocks\\Dashboard\\Dashboard.styl", function() {
-			var newContent = require("!!C:\\Users\\vlebedev\\Documents\\visual studio 2013\\Projects\\Interaction\\Interaction.Web\\Views\\node_modules\\css-loader\\index.js!C:\\Users\\vlebedev\\Documents\\visual studio 2013\\Projects\\Interaction\\Interaction.Web\\Views\\node_modules\\stylus-loader\\index.js!C:\\Users\\vlebedev\\Documents\\visual studio 2013\\Projects\\Interaction\\Interaction.Web\\Views\\Blocks\\Dashboard\\Dashboard.styl");
+		module.hot.accept("!!C:\\d\\Projs\\I\\WebPack\\Interaction.Web\\views\\node_modules\\css-loader\\index.js!C:\\d\\Projs\\I\\WebPack\\Interaction.Web\\views\\node_modules\\stylus-loader\\index.js!C:\\d\\Projs\\I\\WebPack\\Interaction.Web\\views\\Blocks\\Dashboard\\Dashboard.styl", function() {
+			var newContent = require("!!C:\\d\\Projs\\I\\WebPack\\Interaction.Web\\views\\node_modules\\css-loader\\index.js!C:\\d\\Projs\\I\\WebPack\\Interaction.Web\\views\\node_modules\\stylus-loader\\index.js!C:\\d\\Projs\\I\\WebPack\\Interaction.Web\\views\\Blocks\\Dashboard\\Dashboard.styl");
 			if(typeof newContent === 'string') newContent = [module.id, newContent, ''];
 			update(newContent);
 		});
@@ -113,14 +143,44 @@
 	}
 
 /***/ },
-/* 5 */
+/* 7 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(10)();
+	exports = module.exports = __webpack_require__(14)();
 	exports.push([module.id, ".footer {\n  clear: both;\n}\n", ""]);
 
 /***/ },
-/* 6 */
+/* 8 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(9);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(10)(content, {});
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		module.hot.accept("!!C:\\d\\Projs\\I\\WebPack\\Interaction.Web\\views\\node_modules\\css-loader\\index.js!C:\\d\\Projs\\I\\WebPack\\Interaction.Web\\views\\node_modules\\stylus-loader\\index.js!C:\\d\\Projs\\I\\WebPack\\Interaction.Web\\views\\Blocks\\Contacts\\Contacts.styl", function() {
+			var newContent = require("!!C:\\d\\Projs\\I\\WebPack\\Interaction.Web\\views\\node_modules\\css-loader\\index.js!C:\\d\\Projs\\I\\WebPack\\Interaction.Web\\views\\node_modules\\stylus-loader\\index.js!C:\\d\\Projs\\I\\WebPack\\Interaction.Web\\views\\Blocks\\Contacts\\Contacts.styl");
+			if(typeof newContent === 'string') newContent = [module.id, newContent, ''];
+			update(newContent);
+		});
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 9 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(14)();
+	exports.push([module.id, ".contacts {\n  background-color: #c0c0c0;\n  color: #00008b;\n}\n.contacts__item {\n  height: 30px;\n}\n.contacts__item__property {\n  width: 100px;\n}\n.contacts__item__property_index {\n  font-weight: bold;\n  vertical-align: middle;\n}\n", ""]);
+
+/***/ },
+/* 10 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
@@ -316,29 +376,29 @@
 
 
 /***/ },
-/* 7 */
+/* 11 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var v1="<div ng-controller=\"ScheduleController\" class=\"schedule\">{{ schedule.Items.Count() }}<div ng-repeat=\"(key, value) in schedule.Items\" class=\"schedule_column\"><div class=\"schedule_column_date\">{{ key }}</div><div ng-repeat=\"item in value\" class=\"schedule_column_item\">{{ item.Title }}</div></div></div>";
+	var v1="<div ng-controller=\"ScheduleController\" class=\"schedule\">{{ schedule.Items.Count() }}<div ng-repeat=\"(key, value) in schedule.Items\" class=\"schedule__column\"><div class=\"schedule__column__date\">{{ key }}</div><div ng-repeat=\"item in value\" class=\"schedule__column__item\">{{ item.Title }}</div></div></div>";
 	angular.module(["ng"]).run(["$templateCache",function(c){c.put("Schedule.jade", v1)}]);
 	module.exports=v1;
 
 /***/ },
-/* 8 */
+/* 12 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(9);
+	var content = __webpack_require__(13);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(6)(content, {});
+	var update = __webpack_require__(10)(content, {});
 	// Hot Module Replacement
 	if(false) {
 		// When the styles change, update the <style> tags
-		module.hot.accept("!!C:\\Users\\vlebedev\\Documents\\visual studio 2013\\Projects\\Interaction\\Interaction.Web\\Views\\node_modules\\css-loader\\index.js!C:\\Users\\vlebedev\\Documents\\visual studio 2013\\Projects\\Interaction\\Interaction.Web\\Views\\node_modules\\stylus-loader\\index.js!C:\\Users\\vlebedev\\Documents\\visual studio 2013\\Projects\\Interaction\\Interaction.Web\\Views\\Blocks\\Schedule\\Schedule.styl", function() {
-			var newContent = require("!!C:\\Users\\vlebedev\\Documents\\visual studio 2013\\Projects\\Interaction\\Interaction.Web\\Views\\node_modules\\css-loader\\index.js!C:\\Users\\vlebedev\\Documents\\visual studio 2013\\Projects\\Interaction\\Interaction.Web\\Views\\node_modules\\stylus-loader\\index.js!C:\\Users\\vlebedev\\Documents\\visual studio 2013\\Projects\\Interaction\\Interaction.Web\\Views\\Blocks\\Schedule\\Schedule.styl");
+		module.hot.accept("!!C:\\d\\Projs\\I\\WebPack\\Interaction.Web\\views\\node_modules\\css-loader\\index.js!C:\\d\\Projs\\I\\WebPack\\Interaction.Web\\views\\node_modules\\stylus-loader\\index.js!C:\\d\\Projs\\I\\WebPack\\Interaction.Web\\views\\Blocks\\Schedule\\Schedule.styl", function() {
+			var newContent = require("!!C:\\d\\Projs\\I\\WebPack\\Interaction.Web\\views\\node_modules\\css-loader\\index.js!C:\\d\\Projs\\I\\WebPack\\Interaction.Web\\views\\node_modules\\stylus-loader\\index.js!C:\\d\\Projs\\I\\WebPack\\Interaction.Web\\views\\Blocks\\Schedule\\Schedule.styl");
 			if(typeof newContent === 'string') newContent = [module.id, newContent, ''];
 			update(newContent);
 		});
@@ -347,18 +407,18 @@
 	}
 
 /***/ },
-/* 9 */
+/* 13 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(10)();
-	exports.push([module.id, ".schedule {\n  width: 100%;\n}\n.schedule_column {\n  width: 14%;\n  float: left;\n}\n.schedule_column_date {\n  font-weight: bold;\n}\n.schedule_column_item {\n  border: 1px solid #00f;\n}\n", ""]);
+	exports = module.exports = __webpack_require__(14)();
+	exports.push([module.id, ".schedule {\n  width: 100%;\n}\n.schedule__column {\n  width: 14%;\n  float: left;\n}\n.schedule__column__date {\n  font-weight: bold;\n}\n.schedule__column__item {\n  border: 1px solid #00f;\n}\n", ""]);
 
 /***/ },
-/* 10 */
+/* 14 */
 /***/ function(module, exports, __webpack_require__) {
 
-	//C:/Users/vlebedev/Documents/visual studio 2013/Projects/Interaction/Interaction.Web/Views/node_modules/css-loader/cssToString.jade
-	//C:/Users/vlebedev/Documents/visual studio 2013/Projects/Interaction/Interaction.Web/Views/node_modules/css-loader/cssToString.styl
+	//C:/d/Projs/I/WebPack/Interaction.Web/views/node_modules/css-loader/cssToString.jade
+	//C:/d/Projs/I/WebPack/Interaction.Web/views/node_modules/css-loader/cssToString.styl
 	module.exports = function() {
 		var list = [];
 		list.toString = function toString() {

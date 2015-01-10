@@ -16,7 +16,7 @@ namespace Interaction.Web
             routes.MapRoute(
                 name: "Default",
                 url: "{action}",
-                defaults: new { controller = "Data", action = "Page" }
+                defaults: new { controller = "Data", action = "Index" }
             );
         }
     }

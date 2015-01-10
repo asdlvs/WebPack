@@ -7,11 +7,11 @@ namespace Interaction.Web.Models
 {
     public class ContactsModel : AngularModel
     {
-        public List<Contact> Contacts { get; set; }
+        public List<Contact> Items { get; set; }
 
         public ContactsModel() : base("contacts")
         {
-            this.Contacts = new List<Contact>();
+            this.Items = new List<Contact>();
         }
 
         public class Contact

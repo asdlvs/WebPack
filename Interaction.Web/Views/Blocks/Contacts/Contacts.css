@@ -1,0 +1,14 @@
+.contacts {
+  background-color: #c0c0c0;
+  color: #00008b;
+}
+.contacts__item {
+  height: 30px;
+}
+.contacts__item__property {
+  width: 100px;
+}
+.contacts__item__property_index {
+  font-weight: bold;
+  vertical-align: middle;
+}

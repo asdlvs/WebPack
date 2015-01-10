@@ -1,0 +1,17 @@
+h2 Список контактов &nbsp &nbsp
+    a(href='index', target='_self') (На главную)
+
+table.contacts(ng-controller="ContactsController")
+    thead
+        tr
+            th Id
+            th Name
+            th Phone
+            th Email
+    tr.contacts__item(ng-repeat="item in contacts.Items")
+        td.contacts__item__property.contacts__item__property_index  {{ item.Id }}
+        td.contacts__item__property  {{ item.Name }}
+        td.contacts__item__property  {{ item.Phone }}
+        td.contacts__item__property  {{ item.Email }}
+
+include ../Footer/Footer

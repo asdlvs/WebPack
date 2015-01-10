@@ -1,6 +1,6 @@
-﻿var glob = require("glob");
+﻿
 module.exports = {
-    entry: glob.sync(".\\Blocks\\Dashboard\\Dashboard.js"),
+    entry: [".\\Blocks\\Dashboard\\Dashboard.js", ".\\Blocks\\Contacts\\Contacts.js"],
     output: {
         path: "..\\Scripts\\",
         filename: "app.js"
