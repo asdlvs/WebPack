@@ -1,5 +1,5 @@
 
 app.controller('ScheduleController', ['$scope', 'serverData', function($scope, serverData) {
     $scope.schedule = serverData.get('schedule');
-    debug.pop('schedule');
+    delete debug[debug.indexOf('schedule')];
 }]);

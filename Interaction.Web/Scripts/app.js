@@ -80,7 +80,7 @@
 	__webpack_require__(8);
 	app.controller('ContactsController', ['$scope', 'serverData', function($scope, serverData) {
 	    $scope.contacts = serverData.get('contacts');
-	    debug.pop('contacts');
+	    delete debug[debug.indexOf('contacts')];
 	}]);
 
 	app.config(function($routeProvider, $locationProvider) {
@@ -100,7 +100,7 @@
 
 	app.controller('ScheduleController', ['$scope', 'serverData', function($scope, serverData) {
 	    $scope.schedule = serverData.get('schedule');
-	    debug.pop('schedule');
+	    delete debug[debug.indexOf('schedule')];
 	}]);
 
 /***/ },

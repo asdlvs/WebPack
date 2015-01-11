@@ -97,6 +97,7 @@
     <Compile Include="Models\AggregateModel.cs" />
     <Compile Include="Models\AngularModel.cs" />
     <Compile Include="Models\ContactsModel.cs" />
+    <Compile Include="Models\FakeModel.cs" />
     <Compile Include="Models\ScheduleModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

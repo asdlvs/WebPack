@@ -18,6 +18,7 @@ namespace Interaction.Web.Controllers
 
             var aggregate = new AggregateModel();
             aggregate.Models.Add(schedule);
+            aggregate.Models.Add(new FakeModel());
 
             return View("Index", aggregate);
         }

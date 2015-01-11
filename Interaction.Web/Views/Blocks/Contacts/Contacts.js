@@ -1,6 +1,6 @@
 app.controller('ContactsController', ['$scope', 'serverData', function($scope, serverData) {
     $scope.contacts = serverData.get('contacts');
-    debug.pop('contacts');
+    delete debug[debug.indexOf('contacts')];
 }]);
 
 app.config(function($routeProvider, $locationProvider) {
