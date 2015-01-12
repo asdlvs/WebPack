@@ -1,6 +1,6 @@
 app.controller('ContactsController', ['$scope', 'serverData', function($scope, serverData) {
     $scope.contacts = serverData.get('contacts');
-    delete debug[debug.indexOf('contacts')];
+    debug.splice(debug.indexOf('contacts'), 1);
 }]);
 
 app.config(function($routeProvider, $locationProvider) {

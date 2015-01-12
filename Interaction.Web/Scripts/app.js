@@ -80,7 +80,7 @@
 	__webpack_require__(8);
 	app.controller('ContactsController', ['$scope', 'serverData', function($scope, serverData) {
 	    $scope.contacts = serverData.get('contacts');
-	    delete debug[debug.indexOf('contacts')];
+	    debug.splice(debug.indexOf('contacts'), 1);
 	}]);
 
 	app.config(function($routeProvider, $locationProvider) {
@@ -95,12 +95,12 @@
 
 	//C:/d/Projs/I/WebPack/Interaction.Web/views/Blocks/Schedule/Schedule.jade
 	//C:/d/Projs/I/WebPack/Interaction.Web/views/Blocks/Schedule/Schedule.styl
+	__webpack_require__(10);
 	__webpack_require__(11);
-	__webpack_require__(12);
 
 	app.controller('ScheduleController', ['$scope', 'serverData', function($scope, serverData) {
 	    $scope.schedule = serverData.get('schedule');
-	    delete debug[debug.indexOf('schedule')];
+	    debug.splice(debug.indexOf('schedule'));
 	}]);
 
 /***/ },
@@ -129,7 +129,7 @@
 	var content = __webpack_require__(7);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(10)(content, {});
+	var update = __webpack_require__(13)(content, {});
 	// Hot Module Replacement
 	if(false) {
 		// When the styles change, update the <style> tags
@@ -159,7 +159,7 @@
 	var content = __webpack_require__(9);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(10)(content, {});
+	var update = __webpack_require__(13)(content, {});
 	// Hot Module Replacement
 	if(false) {
 		// When the styles change, update the <style> tags
@@ -181,6 +181,44 @@
 
 /***/ },
 /* 10 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var v1="<div ng-controller=\"ScheduleController\" class=\"schedule\">{{ schedule.Items.Count() }}<div ng-repeat=\"(key, value) in schedule.Items\" class=\"schedule__column\"><div class=\"schedule__column__date\">{{ key }}</div><div ng-repeat=\"item in value\" class=\"schedule__column__item\">{{ item.Title }}</div></div></div>";
+	angular.module(["ng"]).run(["$templateCache",function(c){c.put("Schedule.jade", v1)}]);
+	module.exports=v1;
+
+/***/ },
+/* 11 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(12);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(13)(content, {});
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		module.hot.accept("!!C:\\d\\Projs\\I\\WebPack\\Interaction.Web\\views\\node_modules\\css-loader\\index.js!C:\\d\\Projs\\I\\WebPack\\Interaction.Web\\views\\node_modules\\stylus-loader\\index.js!C:\\d\\Projs\\I\\WebPack\\Interaction.Web\\views\\Blocks\\Schedule\\Schedule.styl", function() {
+			var newContent = require("!!C:\\d\\Projs\\I\\WebPack\\Interaction.Web\\views\\node_modules\\css-loader\\index.js!C:\\d\\Projs\\I\\WebPack\\Interaction.Web\\views\\node_modules\\stylus-loader\\index.js!C:\\d\\Projs\\I\\WebPack\\Interaction.Web\\views\\Blocks\\Schedule\\Schedule.styl");
+			if(typeof newContent === 'string') newContent = [module.id, newContent, ''];
+			update(newContent);
+		});
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 12 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(14)();
+	exports.push([module.id, ".schedule {\n  width: 100%;\n}\n.schedule__column {\n  width: 14%;\n  float: left;\n}\n.schedule__column__date {\n  font-weight: bold;\n}\n.schedule__column__item {\n  border: 1px solid #00f;\n}\n", ""]);
+
+/***/ },
+/* 13 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
@@ -374,44 +412,6 @@
 		}
 	}
 
-
-/***/ },
-/* 11 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var v1="<div ng-controller=\"ScheduleController\" class=\"schedule\">{{ schedule.Items.Count() }}<div ng-repeat=\"(key, value) in schedule.Items\" class=\"schedule__column\"><div class=\"schedule__column__date\">{{ key }}</div><div ng-repeat=\"item in value\" class=\"schedule__column__item\">{{ item.Title }}</div></div></div>";
-	angular.module(["ng"]).run(["$templateCache",function(c){c.put("Schedule.jade", v1)}]);
-	module.exports=v1;
-
-/***/ },
-/* 12 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-
-	// load the styles
-	var content = __webpack_require__(13);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(10)(content, {});
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		module.hot.accept("!!C:\\d\\Projs\\I\\WebPack\\Interaction.Web\\views\\node_modules\\css-loader\\index.js!C:\\d\\Projs\\I\\WebPack\\Interaction.Web\\views\\node_modules\\stylus-loader\\index.js!C:\\d\\Projs\\I\\WebPack\\Interaction.Web\\views\\Blocks\\Schedule\\Schedule.styl", function() {
-			var newContent = require("!!C:\\d\\Projs\\I\\WebPack\\Interaction.Web\\views\\node_modules\\css-loader\\index.js!C:\\d\\Projs\\I\\WebPack\\Interaction.Web\\views\\node_modules\\stylus-loader\\index.js!C:\\d\\Projs\\I\\WebPack\\Interaction.Web\\views\\Blocks\\Schedule\\Schedule.styl");
-			if(typeof newContent === 'string') newContent = [module.id, newContent, ''];
-			update(newContent);
-		});
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ },
-/* 13 */
-/***/ function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(14)();
-	exports.push([module.id, ".schedule {\n  width: 100%;\n}\n.schedule__column {\n  width: 14%;\n  float: left;\n}\n.schedule__column__date {\n  font-weight: bold;\n}\n.schedule__column__item {\n  border: 1px solid #00f;\n}\n", ""]);
 
 /***/ },
 /* 14 */
