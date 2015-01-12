@@ -16,20 +16,20 @@ namespace Interaction.Web.Models
 
         public List<AngularModel> Models { get; set; }
 
-        private const string pattern = @"<script type=""text/javascript"">" +
-                                            "var {0} = {{ settings: {{}} }};" +
-                                            "var debug = [];" +
-                                            "var app = angular.module('{0}', ['ngRoute']);" +
-                                            "angular.module('{0}').factory('serverData', function($cacheFactory) {{" +
-                                                "var cache = $cacheFactory('{0}');" +
-                                                "{1}" +
-                                                "return cache;" +
-                                            "}});" +
-                                            "{2}" +
-                                         "</script>";
+        private const string pattern = @"<script type=""text/javascript"">" + "\n" +
+                                            "var {0} = {{ settings: {{}} }}, \n" +
+                                            "    mappings = [],\n" +
+                                            "    app = angular.module('{0}', ['ngRoute']); \n" +
+                                            "angular.module('{0}').factory('serverData', function($cacheFactory) {{\n" +
+                                                "var cache = $cacheFactory('{0}');\n" +
+                                                "{1}\n" +
+                                                "return cache;\n" +
+                                            "}});\n" +
+                                            "{2}\n" +
+                                         "</script>\n";
 
         private const string cachePattern = "cache.put('{0}', {1});\n";
-        private const string debugPattern = "debug.push('{0}');\n";
+        private const string debugPattern = "mappings.push('{0}');\n";
 
         public override string GetModel()
         {
